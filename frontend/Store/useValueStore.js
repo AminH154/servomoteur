@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { axiosInstance } from "./../lib/axios";
 
 export const useValueStore = create(() => ({

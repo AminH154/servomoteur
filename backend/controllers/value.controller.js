@@ -27,3 +27,15 @@ export const SetValue = async (req, res) => {
 };
 
 
+export const GetValue =async(req,res)=>{
+    try{
+        const user =await User.findOne({type :"servomotor"});
+        if(!user){
+            return res.status(404).send("0");
+        }
+        return res.status(200).send(user.value);
+    }catch(error){
+        console.error("Error fetching value:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+}
